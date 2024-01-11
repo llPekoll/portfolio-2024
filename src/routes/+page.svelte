@@ -1,9 +1,20 @@
-<h1 class="text-3xl font-bold underline text-red-100">
-  Hello world! willmse
-</h1>
+<script lang="ts">
+  import App from '$lib/components/App.svelte'
+</script>
 
-<style lang="postcss">
-  :global(html) {
-    background-color: theme(colors.gray.100);
+<div>
+  <App />
+</div>
+
+<style>
+  :global(body) {
+    margin: 0;
+  }
+
+  div {
+    width: 100vw;
+    height: 100vh;
+    background: rgb(13, 19, 32);
+    background: linear-gradient(180deg, rgba(13, 19, 32, 1) 0%, rgba(8, 12, 21, 1) 100%);
   }
 </style>
