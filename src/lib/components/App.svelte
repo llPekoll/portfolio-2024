@@ -13,74 +13,78 @@
         console.log(section)
     }
 </script>
-<Canvas>
-    <Scene />    
-</Canvas>
-<div class="fixed top-0">
-    <h1 class="pt-20 pl-20 text-4xl font-thin text-orange-600">
-        <span class="font-bold text-7xl"> Mepa Yohann.</span>
-    </h1>
-    <h2 class="-mt-1 text-orange-400 pl-[26.7rem] font-thin text-2xl">Developper</h2>
-</div>
-<div class="fixed bottom-20 right-20 text-slate-400 flex justify-end w-1/2 overflow-scroll">
-    {#if showMenu}
-        <ul >
-            <li class=" hover:text-orange-200 transition ease-in-out font-thin" >
-                <button on:click={()=>disp('work')} class="text-2xl hover:text-orange-400" >
-                    Work.
-                </button>
-            </li>
-            <li class=" hover:text-orange-200 transition ease-in-out font-thin" >
-                <button on:click={()=>disp('experience')} class="text-2xl hover:text-orange-400" >
-                    Experience.
-                </button>
-            </li>
-            <li class=" hover:text-orange-200 transition ease-in-out font-thin" >
-                <button on:click={()=>disp('about')} class="text-2xl hover:text-orange-400" >
-                    About.
-                </button>
-            </li>
-        </ul>
-    {/if}
-    {#if !showMenu}
-    <button on:click={()=>showMenu=true } class="text-2xl hover:text-cyan-400" >
-        Back
-    </button>
-        {#if section == 'work'}
-            <div class="text-2xl" transition:fly={{duration: 300, x: 100, y: 500, opacity: 0.5, easing: quintOut }}>
-                <h1>Work</h1>
-                <p>Here is a list of my projects</p>
-            </div>
-        {:else if section == 'experience'}
-            <div class="text-2xl">
-                <div>
-                {#each exeriences.exps as exp }
-                    <div class="grid grid-cols-4 gap-2 pb-8">
-                        <div class="mr-2 text-slate-100 text-sm pt-2">
-                            {exp.time}
-                        </div>
-                        <div class="col-span-3">
-                            <p class="text-slate-100 font-bold">
-                                {exp.position}
-                                •
-                                <span class="font-normal text-base">
+<div class="w-full h-full relative">
 
-                                    {exp.company}
-                                </span>
-                            </p>
-                            <p class="text-sm">
-                                {exp.conent}
-                            </p>
-                        </div>
-                    </div>
-                {/each}
-            </div>
-            </div>
-        {:else if section == 'about'}
-            <div class="flex justify-end">
-            <p class="w-1/3 text-justify text-slate-400" in:fly={{ delay: 250,duration: 300, x: 10, opacity: 0.5, easing: quintOut }}>I'm a 20 years old french student in computer science. I'm currently in my second year of DUT (Diplôme Universitaire de Technologie) in computer science at the University of Bordeaux. I'm looking for an internship in web development for the next year.</p>
-            </div>
+    <div class=" absolute">
+        <h1 class="pt-20 pl-20 text-4xl font-thin text-orange-600">
+            <span class="font-bold text-7xl"> Mepa Yohann.</span>
+        </h1>
+        <h2 class="-mt-1 text-orange-400 pl-[26.7rem] font-thin text-2xl">Developper</h2>
+    </div>
+    <div class="absolute text-slate-400  w-1/2 overflow-scroll flex justify-end bottom-20 right-20">
+        {#if showMenu}
+            <ul>
+                <li class=" hover:text-orange-200 transition ease-in-out font-thin" >
+                    <button on:click={()=>disp('work')} class="text-2xl hover:text-orange-400" >
+                        Work.
+                    </button>
+                </li>
+                <li class=" hover:text-orange-200 transition ease-in-out font-thin" >
+                    <button on:click={()=>disp('experience')} class="text-2xl hover:text-orange-400" >
+                        Experience.
+                    </button>
+                </li>
+                <li class=" hover:text-orange-200 transition ease-in-out font-thin" >
+                    <button on:click={()=>disp('about')} class="text-2xl hover:text-orange-400" >
+                        About.
+                    </button>
+                </li>
+            </ul>
         {/if}
-
-    {/if}
+        {#if !showMenu}
+        <button on:click={()=>showMenu=true } class="text-2xl hover:text-cyan-400" >
+            Back
+        </button>
+            {#if section == 'work'}
+                <div class="text-2xl" transition:fly={{duration: 300, x: 100, y: 500, opacity: 0.5, easing: quintOut }}>
+                    <h1>Work</h1>
+                    <p>Here is a list of my projects</p>
+                </div>
+            {:else if section == 'experience'}
+                <div class="text-2xl">
+                    <div>
+                    {#each exeriences.exps as exp }
+                        <div class="grid grid-cols-4 gap-2 pb-8">
+                            <div class="mr-2 text-slate-100 text-sm pt-2">
+                                {exp.time}
+                            </div>
+                            <div class="col-span-3">
+                                <p class="text-slate-100 font-bold">
+                                    {exp.position}
+                                    •
+                                    <span class="font-normal text-base">
+    
+                                        {exp.company}
+                                    </span>
+                                </p>
+                                <p class="text-sm">
+                                    {exp.conent}
+                                </p>
+                            </div>
+                        </div>
+                    {/each}
+                </div>
+                </div>
+            {:else if section == 'about'}
+                <div class="flex justify-end">
+                <p class="w-1/3 text-justify text-slate-400" in:fly={{ delay: 250,duration: 300, x: 10, opacity: 0.5, easing: quintOut }}>I'm a 20 years old french student in computer science. I'm currently in my second year of DUT (Diplôme Universitaire de Technologie) in computer science at the University of Bordeaux. I'm looking for an internship in web development for the next year.</p>
+                </div>
+            {/if}
+    
+        {/if}
+    </div>
+    
+    <Canvas>
+        <Scene />    
+    </Canvas>
 </div>
