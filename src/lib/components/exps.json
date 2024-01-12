@@ -1,6 +1,30 @@
 {
     "exps": [
         {
+            "company": "Method Animation",
+            "time": "Nov 2008 - Jul 2010",
+            "position": "Layout Artist",
+            "conent": "Layout artist on : 'Iron Man', 'Le Petit Prince', 'Garfield', the series. "
+        },
+        {
+            "company": "Limkokwing University of Creative Technology",
+            "time": "Mar 2012 - Jan 2014",
+            "position": "Lecturer",
+            "conent": "Lecturer in Drawing, painting, illustration, figure drawing for fashion, Website and 3D for architecture."
+        },
+        {
+            "company": "Antek Studio",
+            "time": "Mar 2012 - Jan 2014",
+            "position": "Project Manager",
+            "conent": "Project Manager, Management of the unity 3d game."
+        },
+        {
+            "company": "Light-up-Studio",
+            "time": "Sep 2014 - Jun 2015",
+            "position": "Co-founder",
+            "conent": "Co-founder, Augmented reality company.Creation of Augmented reality machine, Full conception, Design, crafting direction, and software development."
+        },
+        {
             "company": "Augment",
             "time": "2016 - 2017",
             "position": "3d format expert",

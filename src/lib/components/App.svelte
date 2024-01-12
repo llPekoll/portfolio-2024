@@ -20,24 +20,24 @@
     <h1 class="pt-20 pl-20 text-4xl font-thin text-orange-600">
         <span class="font-bold text-7xl"> Mepa Yohann.</span>
     </h1>
-    <h2 class="-mt-1 text-xl italic text-orange-400 pl-[27.5rem]">Developper</h2>
+    <h2 class="-mt-1 text-orange-400 pl-[26.7rem] font-thin text-2xl">Developper</h2>
 </div>
-<div class="fixed bottom-20 right-20 text-slate-400">
+<div class="fixed bottom-20 right-20 text-slate-400 flex justify-end w-1/2 overflow-scroll">
     {#if showMenu}
         <ul >
-            <li class=" hover:text-cyan-500" >
-                <button on:click={()=>disp('work')} class="text-2xl hover:text-cyan-400" >
-                    Work
+            <li class=" hover:text-orange-200 transition ease-in-out font-thin" >
+                <button on:click={()=>disp('work')} class="text-2xl hover:text-orange-400" >
+                    Work.
                 </button>
             </li>
-            <li class=" hover:text-cyan-500" >
-                <button on:click={()=>disp('experience')} class="text-2xl hover:text-cyan-400" >
-                    Experience 
+            <li class=" hover:text-orange-200 transition ease-in-out font-thin" >
+                <button on:click={()=>disp('experience')} class="text-2xl hover:text-orange-400" >
+                    Experience.
                 </button>
             </li>
-            <li class=" hover:text-cyan-500" >
-                <button on:click={()=>disp('about')} class="text-2xl hover:text-cyan-400" >
-                    About 
+            <li class=" hover:text-orange-200 transition ease-in-out font-thin" >
+                <button on:click={()=>disp('about')} class="text-2xl hover:text-orange-400" >
+                    About.
                 </button>
             </li>
         </ul>
@@ -53,12 +53,13 @@
             </div>
         {:else if section == 'experience'}
             <div class="text-2xl">
+                <div>
                 {#each exeriences.exps as exp }
-                    <div class="flex pb-8">
+                    <div class="grid grid-cols-4 gap-2 pb-8">
                         <div class="mr-2 text-slate-100 text-sm pt-2">
                             {exp.time}
                         </div>
-                        <div>
+                        <div class="col-span-3">
                             <p class="text-slate-100 font-bold">
                                 {exp.position}
                                 •
@@ -73,6 +74,7 @@
                         </div>
                     </div>
                 {/each}
+            </div>
             </div>
         {:else if section == 'about'}
             <div class="flex justify-end">
