@@ -3,7 +3,6 @@
     import Scene from './Scene.svelte'
     import { fly } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
-
     let showMenu = true;
     let section:string; 
     const disp = (sec:string) => {
@@ -13,14 +12,13 @@
     }
 </script>
 <Canvas>
-    <Scene />
+    <Scene />    
 </Canvas>
 <div class="fixed top-0">
     <h1 class="pt-20 pl-20 text-4xl font-thin text-orange-600">
         <span class="font-bold text-7xl"> Mepa Yohann.</span>
     </h1>
     <h2 class="-mt-1 text-xl italic text-orange-400 pl-[27.5rem]">Developper</h2>
-    <h3> About me</h3>
 </div>
 <div class="fixed bottom-20 right-20 text-slate-400">
     {#if showMenu}
