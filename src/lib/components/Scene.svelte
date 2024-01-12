@@ -11,9 +11,9 @@
   }}
 />
 <T.DirectionalLight
-  intensity={50}
+  intensity={25}
   
 />
 <!-- <Fog color={'#dddddd'} /> -->
-<T.AmbientLight intensity={0.5} />
+<T.AmbientLight intensity={0.25} />
 <Peko />

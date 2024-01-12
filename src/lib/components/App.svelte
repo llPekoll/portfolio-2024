@@ -23,17 +23,17 @@
 <div class="fixed bottom-20 right-20 text-slate-400">
     {#if showMenu}
         <ul >
-            <li class="list-disc hover:text-cyan-500" >
+            <li class=" hover:text-cyan-500" >
                 <button on:click={()=>disp('work')} class="text-2xl hover:text-cyan-400" >
                     Work
                 </button>
             </li>
-            <li class="list-disc hover:text-cyan-500" >
+            <li class=" hover:text-cyan-500" >
                 <button on:click={()=>disp('experience')} class="text-2xl hover:text-cyan-400" >
                     Experience 
                 </button>
             </li>
-            <li class="list-disc hover:text-cyan-500" >
+            <li class=" hover:text-cyan-500" >
                 <button on:click={()=>disp('about')} class="text-2xl hover:text-cyan-400" >
                     About 
                 </button>
