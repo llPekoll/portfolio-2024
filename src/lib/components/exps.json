@@ -1,0 +1,22 @@
+{
+    "exps": [
+        {
+            "company": "Augment",
+            "time": "2016 - 2017",
+            "position": "3d format expert",
+            "conent": "I am a 3d format expert, making 3d models for Augment."
+        },
+        {
+            "company": "Addsome",
+            "time": "2017 - 2018",
+            "position": "Pipe Designer",
+            "conent": "I designed a pipe for Addsome."
+        }
+    ],
+    "works": [
+        {
+            "name": "NFT Bet",
+            "link": "hhtps://nftbet.io"
+        }
+    ]
+}
