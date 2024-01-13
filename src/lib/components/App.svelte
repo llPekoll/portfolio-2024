@@ -52,7 +52,7 @@
                     {/each}
                 </div>
             {:else if section == 'experience'}
-                <div class="overflow-scroll text-2xl h-96">
+                <div class="overflow-scroll text-2xl h-96 bg-black bg-opacity-60 rounded-lg px-10">
                     <div>
                         {#each infos.xps as exp }
                             <div class="pb-8 grid grid-cols-4 gap-2">
@@ -77,9 +77,9 @@
                     </div>  
                 </div>
             {:else if section == 'about'}
-                <div class="sm:ml-10">
+                <div class="sm:ml-10 bg-black bg-opacity-60 rounded-lg px-10">
                     <h3 class="text-2xl font-bold">{infos.about.title}</h3>
-                    <p class="pb-5 text-justify text-slate-300 font-thin" in:fly={{ delay: 250,duration: 300, x: 10, opacity: 0.5, easing: quintOut }}>{@html infos.about.conent}</p>
+                    <p class="pb-5 text-justify text-slate-300 font-light" in:fly={{ delay: 250,duration: 300, x: 10, opacity: 0.5, easing: quintOut }}>{@html infos.about.conent}</p>
                 </div>
             {/if}
         {/if}   
