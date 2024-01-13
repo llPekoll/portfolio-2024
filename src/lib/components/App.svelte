@@ -13,28 +13,28 @@
         console.log(section)
     }
 </script>
-<div class="w-full h-full relative">
+<div class="relative w-full h-full">
 
-    <div class=" absolute">
+    <div class="absolute ">
         <h1 class="pt-20 pl-20 text-4xl font-thin text-orange-600">
             <span class="font-bold text-7xl"> Mepa Yohann.</span>
         </h1>
         <h2 class="-mt-1 text-orange-400 pl-[26.7rem] font-thin text-2xl">Developper</h2>
     </div>
-    <div class="absolute text-slate-400  w-1/2 overflow-scroll flex justify-end bottom-20 right-20">
+    <div class="absolute flex justify-end w-1/2 overflow-scroll h-96 text-slate-400 bottom-20 right-20">
         {#if showMenu}
             <ul>
-                <li class=" hover:text-orange-200 transition ease-in-out font-thin" >
+                <li class="font-thin hover:text-orange-200 transition ease-in-out" >
                     <button on:click={()=>disp('work')} class="text-2xl hover:text-orange-400" >
                         Work.
                     </button>
                 </li>
-                <li class=" hover:text-orange-200 transition ease-in-out font-thin" >
+                <li class="font-thin hover:text-orange-200 transition ease-in-out" >
                     <button on:click={()=>disp('experience')} class="text-2xl hover:text-orange-400" >
                         Experience.
                     </button>
                 </li>
-                <li class=" hover:text-orange-200 transition ease-in-out font-thin" >
+                <li class="font-thin hover:text-orange-200 transition ease-in-out" >
                     <button on:click={()=>disp('about')} class="text-2xl hover:text-orange-400" >
                         About.
                     </button>
@@ -42,9 +42,6 @@
             </ul>
         {/if}
         {#if !showMenu}
-        <button on:click={()=>showMenu=true } class="text-2xl hover:text-cyan-400" >
-            Back
-        </button>
             {#if section == 'work'}
                 <div class="text-2xl" transition:fly={{duration: 300, x: 100, y: 500, opacity: 0.5, easing: quintOut }}>
                     <h1>Work</h1>
@@ -54,21 +51,21 @@
                 <div class="text-2xl">
                     <div>
                     {#each exeriences.exps as exp }
-                        <div class="grid grid-cols-4 gap-2 pb-8">
-                            <div class="mr-2 text-slate-100 text-sm pt-2">
+                        <div class="pb-8 grid grid-cols-4 gap-2">
+                            <div class="pt-2 mr-2 text-sm text-slate-100">
                                 {exp.time}
                             </div>
                             <div class="col-span-3">
-                                <p class="text-slate-100 font-bold">
+                                <p class="font-bold text-slate-100">
                                     {exp.position}
                                     •
-                                    <span class="font-normal text-base">
+                                    <span class="text-base font-normal">
     
                                         {exp.company}
                                     </span>
                                 </p>
                                 <p class="text-sm">
-                                    {exp.conent}
+                                    {@html exp.conent}
                                 </p>
                             </div>
                         </div>
@@ -83,7 +80,13 @@
     
         {/if}
     </div>
-    
+    {#if !showMenu}
+        <div class="absolute flex justify-end overflow-scroll text-slate-400 bottom-10 right-20">
+            <button on:click={()=>showMenu=true } class="text-2xl hover:text-cyan-400" >
+                Back
+            </button>
+        </div>
+        {/if}
     <Canvas>
         <Scene />    
     </Canvas>

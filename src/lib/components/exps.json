@@ -25,22 +25,56 @@
             "conent": "Co-founder, Augmented reality company.Creation of Augmented reality machine, Full conception, Design, crafting direction, and software development."
         },
         {
-            "company": "Augment",
-            "time": "2016 - 2017",
-            "position": "3d format expert",
-            "conent": "I am a 3d format expert, making 3d models for Augment."
+            "company": "Lynx Animation Studios",
+            "time": "Sep 2015 - Jan 2016",
+            "position": "Background and Compositing Director",
+            "conent": "Background and Compositing Director, Toon boom"
+        },
+        {
+            "company": "Augment SAS",
+            "time": "Apr 2016 - Dec 2017",
+            "position": "3D format expert",
+            "conent": "3D Plugin Develpelement & R&D in Virtual Reality/Augmented Reality Augment is a 3D application for 3D Artist Since Artists can use different software, I have to develop and maintain plugins for various 3D software, that was done in python mostly.Plus Some Virtual Reality work, using HTC Vive, that was done in Unity and Unreal Stack <strong> Python ,Ruby</strong> R&D <strong> VR Networking, HTC Vive, Hololens, Unity, Unreal </strong>"
         },
         {
             "company": "Addsome",
-            "time": "2017 - 2018",
-            "position": "Pipe Designer",
-            "conent": "I designed a pipe for Addsome."
+            "time": "Jan 2018 - May 2018",
+            "position": "Python Software Engineer",
+            "conent": "Pipeline Creation to Process 3D files, We scraped 3D files from the internet, then done a couple of processes to them, then make them accessible to Unity3D via a server. First I've analyzed the files and removed unusable duplicates(I've extracted detailed report about all the files), store all the information into the MongoDB, I've cleaned the files, then make them accessible in Unity to be edited by our graphic designers, then a server creation to send the file with all the settings into Unity3D."
+        },
+        {
+            "company": "Project Lead Developer",
+            "time": "May 2018 - May 2019",
+            "position": "Project Lead Developer",
+            "conent": "Pipeline Creation for Swatch rendering in 3D. Transform a database made for construction to a database made for 3D rendering, Functional analysis with the Rolex team, Business trip, Developpement of the core app, lead of a small team, Documentation, Code Review, Tool development (etc... interactive 3D visualization and builder)."
+        },
+        {
+            "company": "Tipsmeee Inc.",
+            "time": "Jun 2019 - Dec 2021",
+            "position": "CTO",
+            "conent": "Tipsmeee is a web app, a Customer to Customer payment application, when you create an account, you get a QR code linked to your personal webpage, with this page you can receive payment from anybody with a smartphone in 2 sc! As a CTO, I've done the architecture of the project, functional analysis, documentation, a lot of development, code review, and deployment on the cloud."
+        },
+        {
+            "company": "Aneo",
+            "time": "May 2021 - Janv 2023",
+            "position": "Tech Lead",
+            "conent": "Natixis est une entreprise avec une énorme infrastructure, j'ai été appelé pour travailler sur le projet SV2, cet outil a été créé il y a 3 ans pour fusionner et automatiser les processus. Ma mission est de challenger les créateurs avec les technologies possibles, et d'animer des équipes afin de faire évoluer correctement les outils. De plus, donnez la stratégie pour implanter la nouvelle technologie en douceur. De plus, comme le cœur de SV2 est développé en Proto, je dois coordonner l'équipe en Proto et à Paris."
+        },
+        {
+            "company": "Learning Planet Institute",
+            "time": "Janv 2023 - Now",
+            "position": "Tech Lead",
+            "conent": "Teach leading the product 'Projects' 5 Dev and Devops implementation of management tools like installing Jira, Agile rituals. Exploring ChatGPT integration. Supporting an Application on made with a Discord Bot"
         }
     ],
     "works": [
         {
             "name": "NFT Bet",
-            "link": "hhtps://nftbet.io"
+            "link": "https://nftlbet.com/"
+        },
+        {
+            "name": "Swapye",
+            "link": "https://swapye.com/"
         }
     ]
 }
