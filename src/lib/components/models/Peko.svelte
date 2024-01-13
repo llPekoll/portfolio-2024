@@ -33,7 +33,7 @@
   let jose = 0
   useTask((delta) => {
     const f = 1 / 60 / delta
-    rotation += 0.0001 * f
+    rotation += 0.0003 * f
   })
   
 </script>

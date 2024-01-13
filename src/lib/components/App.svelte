@@ -3,31 +3,31 @@
     import Scene from './Scene.svelte'
     import { fly } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
-    import exeriences from '$lib/components/exps.json'
+    import infos from '$lib/components/infos.json'
     let showMenu = true;
-    let section:string; 
+    let section:string;
+    infos.xps.reverse()
     const disp = (sec:string) => {
         section = sec;
         showMenu = !showMenu;
-        console.log(section)
     }
 </script>
 <div class="relative w-full h-full">
 
     <div class="absolute ">
-        <div class="pt-20 pl-20 text-right ">
-            <h1 class="font-bold text-orange-600 text-7xl">
+        <div class="sm:pt-20 sm:pl-20 pt-10 pl-10 text-right ">
+            <h1 class="font-bold text-orange-600 text-2xl sm:text-7xl">
                 Mepa Yohann.
             </h1>
-            <h2 class="-mt-1 text-2xl font-thin text-orange-400">Developper</h2>
+            <h2 class="-mt-1 text-normal font-thin text-orange-400 sm:text-2xl">Developper</h2>
         </div>
     </div>
-    <div class="absolute flex justify-end w-1/2 overflow-scroll items-end h-96 text-slate-400 bottom-20 right-20">
+    <div class="absolute flex items-end justify-end w-5/6 sm:w-1/2 text-slate-200 sm:bottom-20 sm:right-20 bottom-10 right-5">
         {#if showMenu}
             <ul>
                 <li class="font-thin hover:text-orange-200 transition ease-in-out" >
                     <button on:click={()=>disp('work')} class="text-2xl hover:text-orange-400" >
-                        Work.
+                        Personal Work.
                     </button>
                 </li>
                 <li class="font-thin hover:text-orange-200 transition ease-in-out" >
@@ -40,55 +40,80 @@
                         About.
                     </button>
                 </li>
+                <!-- <li class="font-thin hover:text-orange-200 transition ease-in-out" >
+                    <button on:click={()=>disp('links')} class="text-2xl hover:text-orange-400" >
+                        Links.
+                    </button>
+                </li> -->
             </ul>
         {/if}
         {#if !showMenu}
             {#if section == 'work'}
-                <div class="text-2xl" transition:fly={{duration: 300, x: 100, y: 500, opacity: 0.5, easing: quintOut }}>
-                    <h1>Work</h1>
-                    <p>Here is a list of my projects</p>
-                </div>
-            {:else if section == 'experience'}
-                <div class="text-2xl">
-                    <div>
-                    {#each exeriences.exps as exp }
-                        <div class="pb-8 grid grid-cols-4 gap-2">
-                            <div class="pt-2 mr-2 text-sm text-slate-100">
-                                {exp.time}
-                            </div>
-                            <div class="col-span-3">
-                                <p class="font-bold text-slate-100">
-                                    {exp.position}
-                                    •
-                                    <span class="text-base font-normal">
-    
-                                        {exp.company}
-                                    </span>
-                                </p>
-                                <p class="text-sm">
-                                    {@html exp.conent}
-                                </p>
-                            </div>
-                        </div>
+                <div class="pb-5 text-2xl" transition:fly={{duration: 300, x: 100, y: 500, opacity: 0.5, easing: quintOut }}>
+                    {#each infos.works as work }
+                                <a class="block italic font-thin hover:underline hover:text-orange-400 text-slate-100 transition ease-in-out " href={work.link} target="_blank" rel="noopener noreferrer">
+                                    -> {work.name}.
+                                </a>
                     {/each}
                 </div>
+            {:else if section == 'experience'}
+                <div class="overflow-scroll text-2xl h-96">
+                    <div>
+                        {#each infos.xps as exp }
+                            <div class="pb-8 grid grid-cols-4 gap-2">
+                                <div class="pt-2 mr-2 text-sm text-slate-100">
+                                    {exp.time}
+                                </div>
+                                <div class="col-span-3">
+                                    <p class="font-bold text-slate-100">
+                                        {exp.position}
+                                        •
+                                        <span class="text-base font-normal">
+        
+                                            {exp.company}
+                                        </span>
+                                    </p>
+                                    <p class="text-sm">
+                                        {@html exp.conent}
+                                    </p>
+                                </div>
+                            </div>
+                        {/each}
+                    </div>  
                 </div>
             {:else if section == 'about'}
-                <div class="flex justify-end">
-                <p class="w-1/3 text-justify text-slate-400" in:fly={{ delay: 250,duration: 300, x: 10, opacity: 0.5, easing: quintOut }}>I'm a 20 years old french student in computer science. I'm currently in my second year of DUT (Diplôme Universitaire de Technologie) in computer science at the University of Bordeaux. I'm looking for an internship in web development for the next year.</p>
+                <div class="sm:ml-10">
+                    <h3 class="text-2xl font-bold">{infos.about.title}</h3>
+                    <p class="pb-5 text-justify text-slate-300 font-thin" in:fly={{ delay: 250,duration: 300, x: 10, opacity: 0.5, easing: quintOut }}>{@html infos.about.conent}</p>
                 </div>
+            <!-- {:else if section == 'links'}
+                {#each infos.links as link }
+                    <a class="block italic font-thin hover:underline hover:text-orange-400 text-slate-100 transition ease-in-out " href={link.link} target="_blank" rel="noopener noreferrer">
+                        -> {@html link.icon} {link.name}.
+                    </a>
+                {/each} -->
             {/if}
-    
-        {/if}
+        {/if}   
     </div>
     {#if !showMenu}
-        <div class="absolute flex justify-end overflow-scroll text-slate-400 bottom-10 right-20">
-            <button on:click={()=>showMenu=true } class="text-2xl hover:text-cyan-400" >
-                Back
+        <div class="absolute flex justify-end overflow-scroll text-slate-400 sm:bottom-10 sm:right-20 bottom-5 right-10">
+            <button on:click={()=>showMenu=true } class="text-4xl italic font-bold text-orange-600 animate-pulse" >
+                Back.
             </button>
         </div>
-        {/if}
-    <Canvas>
-        <Scene />    
-    </Canvas>
+    {:else }
+    <div class="absolute flex overflow-scroll text-slate-400 sm:bottom-10 sm:right-20 bottom-5 right-10">
+    {#each infos.links as link }
+        <a class="block italic font-thin hover:underline hover:text-orange-400 text-slate-100 transition ease-in-out mx-2" href={link.link} target="_blank" rel="noopener noreferrer ">
+            {@html link.icon} 
+        </a>
+        
+        {/each}
+    </div>
+    {/if}
+    <div class="w-full h-full">
+        <Canvas>
+            <Scene />    
+        </Canvas>
+    </div>
 </div>
