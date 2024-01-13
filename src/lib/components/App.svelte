@@ -22,7 +22,7 @@
             <h2 class="-mt-1 text-normal font-thin text-orange-400 sm:text-2xl">Developper</h2>
         </div>
     </div>
-    <div class="absolute flex items-end justify-end w-5/6 sm:w-1/2 text-slate-200 sm:bottom-20 sm:right-20 bottom-10 right-5">
+    <div class="absolute flex items-end justify-end w-5/6 sm:w-1/2 text-slate-200 sm:bottom-20 sm:right-20 bottom-16 right-5">
         {#if showMenu}
             <ul>
                 <li class="font-thin hover:text-orange-200 transition ease-in-out" >
@@ -40,11 +40,6 @@
                         About.
                     </button>
                 </li>
-                <!-- <li class="font-thin hover:text-orange-200 transition ease-in-out" >
-                    <button on:click={()=>disp('links')} class="text-2xl hover:text-orange-400" >
-                        Links.
-                    </button>
-                </li> -->
             </ul>
         {/if}
         {#if !showMenu}
@@ -86,12 +81,6 @@
                     <h3 class="text-2xl font-bold">{infos.about.title}</h3>
                     <p class="pb-5 text-justify text-slate-300 font-thin" in:fly={{ delay: 250,duration: 300, x: 10, opacity: 0.5, easing: quintOut }}>{@html infos.about.conent}</p>
                 </div>
-            <!-- {:else if section == 'links'}
-                {#each infos.links as link }
-                    <a class="block italic font-thin hover:underline hover:text-orange-400 text-slate-100 transition ease-in-out " href={link.link} target="_blank" rel="noopener noreferrer">
-                        -> {@html link.icon} {link.name}.
-                    </a>
-                {/each} -->
             {/if}
         {/if}   
     </div>
