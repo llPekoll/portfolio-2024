@@ -6,7 +6,6 @@
     import exeriences from '$lib/components/exps.json'
     let showMenu = true;
     let section:string; 
-    console.log(exeriences.exps)
     const disp = (sec:string) => {
         section = sec;
         showMenu = !showMenu;
@@ -16,12 +15,14 @@
 <div class="relative w-full h-full">
 
     <div class="absolute ">
-        <h1 class="pt-20 pl-20 text-4xl font-thin text-orange-600">
-            <span class="font-bold text-7xl"> Mepa Yohann.</span>
-        </h1>
-        <h2 class="-mt-1 text-orange-400 pl-[26.7rem] font-thin text-2xl">Developper</h2>
+        <div class="pt-20 pl-20 text-right ">
+            <h1 class="font-bold text-orange-600 text-7xl">
+                Mepa Yohann.
+            </h1>
+            <h2 class="-mt-1 text-2xl font-thin text-orange-400">Developper</h2>
+        </div>
     </div>
-    <div class="absolute flex justify-end w-1/2 overflow-scroll h-96 text-slate-400 bottom-20 right-20">
+    <div class="absolute flex justify-end w-1/2 overflow-scroll items-end h-96 text-slate-400 bottom-20 right-20">
         {#if showMenu}
             <ul>
                 <li class="font-thin hover:text-orange-200 transition ease-in-out" >
