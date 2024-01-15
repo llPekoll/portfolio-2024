@@ -68,7 +68,7 @@
                                             {exp.company}
                                         </span>
                                     </p>
-                                    <p class="text-sm">
+                                    <p class="text-xs sm:text-sm">
                                         {@html exp.conent}
                                     </p>
                                 </div>
@@ -79,7 +79,7 @@
             {:else if section == 'about'}
                 <div class="px-10 bg-black rounded-lg sm:ml-10 bg-opacity-60">
                     <h3 class="text-2xl font-bold">{infos.about.title}</h3>
-                    <p class="pb-5 font-light text-justify text-slate-300" in:fly={{ delay: 250,duration: 300, x: 10, opacity: 0.5, easing: quintOut }}>{@html infos.about.conent}</p>
+                    <p class="pb-5 text-xs font-light text-justify text-slate-300 sm:text-sm" in:fly={{ delay: 250,duration: 300, x: 10, opacity: 0.5, easing: quintOut }}>{@html infos.about.conent}</p>
                 </div>
             {/if}
         {/if}   
