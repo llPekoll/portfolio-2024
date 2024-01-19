@@ -13,5 +13,5 @@
   intensity={32}
   
 />
-<T.AmbientLight intensity={0.25} />
+<T.AmbientLight intensity={0.05} />
 <Peko />

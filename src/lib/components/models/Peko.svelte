@@ -5,7 +5,18 @@
   import { useGltf } from '@threlte/extras'
   import { useTexture } from '@threlte/extras'
   
-
+  let scaleFactor=0;
+  let color=0xb83609;
+  $: innerWidth=0;
+$: {
+  if (innerWidth <= 640) {
+    scaleFactor = 0.6;
+    color = 0xb83609;
+  } else {
+    scaleFactor = 1;
+    color = 0xea580b;
+  }
+}
   type $$Props = Props<THREE.Group>
   type $$Events = Events<THREE.Group>
   type $$Slots = Slots<THREE.Group> & { fallback: {}; error: { error: any } }
@@ -21,7 +32,7 @@
     }
   }
 
-    const gltf = useGltf<GLTFResult>('/models/peko.glb')
+    const gltf = useGltf<GLTFResult>('/models/peko2.glb')
     const map = useTexture('/models/text_low.jpg')
 
   const assets = Promise.all([gltf, map]);
@@ -37,27 +48,26 @@
   })
   
 </script>
-
+<svelte:window bind:innerWidth />
 <T is={ref} dispose={false} {...$$restProps} bind:this={$component}>
     {#await assets}
         <slot name="fallback" />
         {:then [gltf, map]}
-        <T.Mesh  rotation.y={1.2+rotation} geometry={gltf.nodes.mesh.geometry} scale={39.9*1.2} >
+        <T.Mesh  rotation.y={1.2+rotation} geometry={gltf.nodes.mesh.geometry} scale={39.9*1.2* scaleFactor} >
             <T.MeshLambertMaterial 
                 map={map} 
                 color={0x000000}
             />
-
         </T.Mesh>
-            <T.Mesh  rotation.y={1.2+rotation} geometry={gltf.nodes.mesh.geometry} scale={40*1.2} >
+            <T.Mesh  rotation.y={1.2+rotation} geometry={gltf.nodes.mesh.geometry} scale={40*1.2* scaleFactor} >
                 <T.MeshLambertMaterial 
-                    color={0xea580b}
+                    color={color}
                     side={FrontSide}
                     wireframe={true}
+                    wireframeLinecap={'round'}
+                    wireframeLinewidth={.2}
                     fog={true}
-                    alphaToCoverage= true
                 />
-
             </T.Mesh>
         {:catch error}
             <slot name="error" {error} />
