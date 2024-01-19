@@ -21,7 +21,7 @@
     }
   }
 
-    const gltf = useGltf<GLTFResult>('/models/peko.glb')
+    const gltf = useGltf<GLTFResult>('/models/peko2.glb')
     const map = useTexture('/models/text_low.jpg')
 
   const assets = Promise.all([gltf, map]);
@@ -42,18 +42,12 @@
     {#await assets}
         <slot name="fallback" />
         {:then [gltf, map]}
-        <T.Mesh  rotation.y={1.2+rotation} geometry={gltf.nodes.mesh.geometry} scale={39.9*1.2} >
-            <T.MeshLambertMaterial 
-                map={map} 
-                color={0x000000}
-            />
 
-        </T.Mesh>
             <T.Mesh  rotation.y={1.2+rotation} geometry={gltf.nodes.mesh.geometry} scale={40*1.2} >
                 <T.MeshLambertMaterial 
-                    color={0xea580b}
+                    color={0xffffff}
                     side={FrontSide}
-                    wireframe={true}
+                    map={map}
                     fog={true}
                     alphaToCoverage= true
                 />

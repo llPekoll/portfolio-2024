@@ -10,8 +10,16 @@
   }}
 />
 <T.DirectionalLight
-  intensity={32}
+  intensity={132}
+  color={0xea580d}
+  position={[-10, 0, 0]}
   
 />
-<T.AmbientLight intensity={0.25} />
+<T.DirectionalLight
+  intensity={132}
+  color={0xea580d}
+  position={[-10, 0, -130]}
+  
+/>
+<T.AmbientLight intensity={0.05} />
 <Peko />
